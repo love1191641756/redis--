@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章添加</title>
+    <link rel="stylesheet" type="text/css" href="./static/css/bootstrap.min.css">
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br />
+<div class="container">
+    <form action="" method="POST" class="form-horizontal" role="form" id="add">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-10">
+                <input type="text" name="username" id="username" class="form-control" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">密码：</label>
+            <div class="col-sm-10">
+                <input type="password" name="password" id="password" class="form-control" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <button type="button" id="btn" class="btn btn-primary">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $('#btn').on('click',function(){
+            let username = $('#username').val().trim();
+            let password = $('#password').val().trim();
+            if(username == '' || password == ''){
+                alert('账号和密码都不能为空');
+                return;
+            }
+            $('#add').submit();
+        });
+    });
+</script>
